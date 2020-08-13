@@ -1,0 +1,32 @@
+
+.top-airing-section
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid black
+    flex-grow: 1
+    flex-shrink: 0
+    
+.top-airing-section__box
+    width: 13em
+    height: 20em
+    display: inline-flex
+    justify-content: flex-start
+    align-items: flex-end
+    margin: 10px
+    background-size: 100% 100%
+    background-blend-mode: multiply
+    background-color: rgba(0, 0, 0, 0.1)
+    color: white
+    position: relative
+    flex-shrink: 0
+    &:hover
+        background-color: rgb(255, 255, 255)
+    p
+        flex-grow: 1
+        font-size: 16px
+        filter: drop-shadow(0 2px 0.1rem black)
+        text-align: match-parent
+        align-self: flex-end
+        justify-self: flex-end
+        margin: 5px

@@ -1,0 +1,32 @@
+.headImage {
+  width: 100vw;
+  padding: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #0a0444;
+  -webkit-filter: drop-shadow(0 0 0.75em);
+          filter: drop-shadow(0 0 0.75em);
+  color: white;
+}
+
+.headImage h1 {
+  margin: 0;
+  font-size: 4em;
+}
+
+.headImage p {
+  margin: 0;
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=HeadImage.css.map */
