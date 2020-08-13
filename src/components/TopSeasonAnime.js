@@ -24,18 +24,36 @@ function TopairingAnime() {
                         <p>{airingAnimeData.top[id].title}</p>
                     </a>
             )}
+        else{
+            return(
+                <h1 className='top-airing-section__box'>LOADING</h1>
+            )
+        }
     }
 
 
 
     return (
+        <>
+        <h1 className='airing-h'>Currently Airing</h1>
         <section className='top-airing-section'>
             {animeDataBox(0)}
             {animeDataBox(1)}
             {animeDataBox(2)}
             {animeDataBox(3)}
             {animeDataBox(4)}
+            {animeDataBox(5)}
+            {animeDataBox(6)}
+            {animeDataBox(7)}
+            {animeDataBox(8)}
+            {animeDataBox(9)}
+            {animeDataBox(10)}
+            {animeDataBox(11)}
+            {animeDataBox(12)}
+            {animeDataBox(13)}
+            {animeDataBox(14)}
         </section>
+        </>
     )
 }
 
