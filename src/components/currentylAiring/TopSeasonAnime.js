@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import settings from './sliderSettings'
 
 function TopairingAnime() {
-    const [airingAnimeData, setairingAnimeData] = useState()
+    const [airingAnimeData, setairingAnimeData] = useState() //fetched data
     
      //fetch airing anime airing data
      const getData = async () => {

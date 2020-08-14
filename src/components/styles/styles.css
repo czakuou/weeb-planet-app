@@ -61,36 +61,65 @@ a {
   border-radius: 3px;
 }
 
-.headImage {
-  width: 100vw;
-  padding: 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #0a0444;
-  -webkit-filter: drop-shadow(0 0 0.75em);
-          filter: drop-shadow(0 0 0.75em);
+.container {
+  /*   background: linear-gradient(135deg, #3e028c -50%, #000 100%); */
+  background-image: linear-gradient(135deg, #e7627d 0%, #b8235a 25%, #801357 50%, #3d1635 75%, #1c1a27 100%);
+  height: 400px;
+  position: relative;
+}
+
+.fixed {
+  position: absolute;
+  top: 40%;
+  text-align: center;
   color: white;
+  font-weight: 700;
+  text-align: center;
+  width: 100vw;
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
 }
 
-.headImage h1 {
-  margin: 0;
-  font-size: 4em;
+.parallax {
+  height: 400px;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  overflow: hidden;
 }
 
-.headImage p {
-  margin: 0;
-  font-size: 1.5em;
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.starfield > * {
+  background-size: 200px 200px;
+  background-image: radial-gradient(2px 2px at 40px 60px, #ccc, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 60px, lime, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 110px 90px, red, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 190px 150px, #ffc800, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  position: absolute;
+  top: -250%;
+  left: 0;
+  height: 500%;
+  width: 100%;
+}
+
+.starfield span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.starfield span:nth-child(3) {
+  -webkit-transform: rotate(69deg);
+          transform: rotate(69deg);
+}
+
+.starfield span:nth-child(4) {
+  -webkit-transform: rotate(123deg);
+          transform: rotate(123deg);
 }
 
 .airing-h {
