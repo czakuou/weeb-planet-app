@@ -9,12 +9,15 @@ function TopairingAnime() {
     
      //fetch airing anime airing data
      const getData = async () => {
-        const response = await fetch('https://private-anon-d58a107d8f-jikan.apiary-proxy.com/v3/top/anime/1/airing')
-        const data = await response.json()
-            .then(data => {
-                setairingAnimeData(Object.assign({}, data))
-            })
-            .catch(err => console.error(`can't acces data`))
+        try{
+            const response = await fetch('https://private-anon-d58a107d8f-jikan.apiary-proxy.com/v3/top/anime/1/airing')
+            const data = await response.json()
+                .then(data => {
+                    setairingAnimeData(Object.assign({}, data))
+                })
+                }catch (err) {
+                    console.log(err)
+                }
     }
 
     useEffect(() =>{
