@@ -79,6 +79,8 @@ a {
   font-size: 4rem;
   margin: 0;
   padding: 0;
+  -webkit-filter: drop-shadow(0 0.5rem 0.75rem black);
+          filter: drop-shadow(0 0.5rem 0.75rem black);
 }
 
 .parallax {
