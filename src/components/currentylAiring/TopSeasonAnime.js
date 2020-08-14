@@ -21,7 +21,7 @@ function TopairingAnime() {
         getData()
     }, [])
 
-    //Box of anime containing img, title, url to MAL and score
+    //Anime box generator
     function animeDataBox(id) {
 
         if(airingAnimeData !== undefined){
@@ -39,8 +39,6 @@ function TopairingAnime() {
             )
         }
     }
-
-    //Slick Slider Settings
     
     
     return (
