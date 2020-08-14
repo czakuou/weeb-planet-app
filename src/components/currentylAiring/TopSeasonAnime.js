@@ -43,7 +43,7 @@ function TopairingAnime() {
     
     return (
         <>
-        <h1 className='airing-h'>Currently Airing</h1>
+        <h1 className='airing-h'>Currently Airing test</h1>
             <Slider className='top-airing-section'  {...settings}>
                 {animeDataBox(0)}
                 {animeDataBox(1)}
