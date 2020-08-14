@@ -1,4 +1,10 @@
+.airing-h {
+  font-size: 40px;
+  text-align: center;
+}
+
 .top-airing-section {
+  width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,27 +14,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid black;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  margin: 20px auto;
+  -webkit-filter: drop-shadow(0.1rem 0.3rem 0.8rem black);
+          filter: drop-shadow(0.1rem 0.3rem 0.8rem black);
 }
 
 .top-airing-section__box {
-  width: 13em;
+  width: auto;
   height: 20em;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-size: 100% 100%;
   background-blend-mode: multiply;
   background-color: rgba(0, 0, 0, 0.1);
@@ -49,10 +56,22 @@
   font-size: 16px;
   -webkit-filter: drop-shadow(0 2px 0.1rem black);
           filter: drop-shadow(0 2px 0.1rem black);
-  text-align: match-parent;
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-end;
   margin: 5px;
+}
+
+.top-airing-section__div {
+  width: 13em;
+  height: 20em;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
 }
 /*# sourceMappingURL=TopSeasonAnime.css.map */

@@ -5,9 +5,9 @@ function Header() {
         <header className='header'>
             <h1 className='web-title'>Weeb-Planet</h1>
             <ul className='nav-list'>
-                <a href="#" value='#'><li>Anime</li></a>
-                <a href="#" value='#'><li>Manga</li></a>
-                <a href="#" value='#'><li>Characters</li></a>
+                <a href="" value='anime'><li>Anime</li></a>
+                <a href="" value='manga'><li>Manga</li></a>
+                <a href="" value='char'><li>Characters</li></a>
             </ul>
             <form className='search-form'>
                 <label className='search-label'>
