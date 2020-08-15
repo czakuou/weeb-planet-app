@@ -26,14 +26,15 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
 }
 
 .web-title {
-  font-size: 2.2em;
+  font-size: 3.2em;
+  margin: 0;
 }
 
 .nav-list {
+  font-size: 1.8em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,6 +60,54 @@ a {
   background: red;
   border: 1px solid black;
   border-radius: 3px;
+}
+
+.search-bar {
+  width: 25em;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  height: 2.6em;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.search-bar:focus {
+  color: #00B4CC;
+}
+
+.search-bar:first-child {
+  width: 6em;
+}
+
+.search-submit {
+  width: 2.6em;
+  height: 2.6em;
+  border: 1px solid #00B4CC;
+  padding: 5px;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  background-image: url("./img/searchIcon.png");
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search-form {
+  position: relative;
+  margin-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {

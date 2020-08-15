@@ -11,19 +11,15 @@ function Header() {
             </ul>
             <form className='search-form'>
                 <label className='search-label'>
-                    <select className='search-type'>
+                    <select className='search-bar'>
                         <option value="anime">Anime</option>
                         <option value='manga'>Manga</option>
                         <option value="character">Character</option>
                     </select>
-                    <input type="text" name="text" className='search-bar' />
+                     <input type="text" name="text" className='search-bar' />
                 </label>
-                <input type="submit" value='search' className='search-submit' />
+                     <button type="submit" className='search-submit'></button>
             </form>
-            <div className='account'>
-                <a className='login' href="#">Login</a>
-                <a className='signUp' href="#">Sign Up</a>
-            </div>
         </header>
     )
 }
