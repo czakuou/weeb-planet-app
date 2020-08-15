@@ -17,7 +17,7 @@ function RandomAnime() {
 
 
     //random anime generator
-    const random = Math.floor(Math.random() * (45000 - 1 + 1) + 1); //generate random number between 0-10000
+    const random = Math.floor(Math.random() * (5000 - 1 + 1) + 1); //generate random number between 0-10000
     const getData = async () => {
         try{
         const response = await fetch(`https://private-anon-06941f904f-jikan.apiary-proxy.com/v3/anime/${random}`)
@@ -43,7 +43,7 @@ function RandomAnime() {
                 image_url = randomAnimeData.image_url
                 type = randomAnimeData.type
                 status = randomAnimeData.status
-                premiered = randomAnimeData.premiered
+                premiered = randomAnimeData.aired.string
                 rating = randomAnimeData.rating
                 score = randomAnimeData.score
                 synopsis = randomAnimeData.synopsis
@@ -61,27 +61,30 @@ function RandomAnime() {
         }else{
         return (
             <>
-                <a href={url} target="_blank"><h1>{title}</h1></a>
-                <a href={url} target="_blank"> <img src={image_url} alt='Loading'></img></a>
-                <p>Type: {type}</p>
-                <p>Status: {status}</p>
-                <p>Premiered: {premiered}</p>
-                <p>{rating}</p>
-                <p>Score: {score}</p>
-                <p>{synopsis}</p>
+                <a className='random-anime__img' href={url} target="_blank"> <img src={image_url} alt='Loading'></img>More Info</a>
+                <p></p>
+                <div className='random-anime'>
+                    <a href={url} target="_blank"><h1>{title}</h1></a>
+                    <p>Type: {type}</p>
+                    <p>Score: {score}</p>
+                    <p>Status: {status}</p>
+                    <p>Premiere: {premiered}</p>
+                    <p>{rating}</p>
+                    <p className='random-anime__synopsis'>{synopsis}</p>
+                    <button className="random-anime__button" onClick={getData} type='button'>Random</button>
+                </div>
             </>
         )}
     }
 
 
     return (
-        <>
-            <h1>Random Anime Generator</h1>
+        <div className='random-anime__section'>
+            <h1 className='airing-h'>Random Anime Generator</h1>
             <div className="random-anime__box">
                 {animeBox()}
-                <button onClick={getData} type='button'>Random</button>
             </div>
-        </>
+        </div>
     )
 }
 

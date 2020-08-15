@@ -249,4 +249,92 @@ a {
           align-items: center;
   justify-items: center;
 }
+
+.random-anime__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.random-anime__box {
+  margin: 1em 0 2em;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 10px 8px 20px 1px black;
+          box-shadow: 10px 8px 20px 1px black;
+  padding: 1.2em;
+}
+
+.random-anime__img {
+  margin-right: 1em;
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.random-anime__img:hover {
+  opacity: 0.7;
+}
+
+.random-anime__synopsis {
+  width: 80%;
+}
+
+.random-anime__button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.random-anime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.random-anime h1 {
+  margin: 0 0 1em;
+  text-align: center;
+  color: black;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.random-anime h1:hover {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.random-anime p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.random-anime__synopsis {
+  font-size: 1.4em;
+  font-weight: bolded;
+}
 /*# sourceMappingURL=styles.css.map */
