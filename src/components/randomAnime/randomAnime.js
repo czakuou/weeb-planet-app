@@ -54,6 +54,11 @@ function RandomAnime() {
 
     //generate box component
     function animeBox(){
+        if(title === 'Loading'){
+            return (
+                <h1>Loading Data</h1>
+            )
+        }else{
         return (
             <>
                 <a href={url} target="_blank"><h1>{title}</h1></a>
@@ -65,7 +70,7 @@ function RandomAnime() {
                 <p>Score: {score}</p>
                 <p>{synopsis}</p>
             </>
-        )
+        )}
     }
 
 
