@@ -71,10 +71,6 @@
   cursor: pointer;
 }
 
-.random-anime h1:hover {
-  color: rgba(0, 0, 0, 0.1);
-}
-
 .random-anime p {
   margin: 10px 0;
   font-size: 1.2em;

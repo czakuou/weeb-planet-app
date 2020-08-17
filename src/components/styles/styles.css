@@ -46,12 +46,9 @@ a {
           flex-direction: row;
 }
 
-.nav-list a {
-  margin: 0 1em;
-}
-
-.nav-list a li {
+.nav-list li {
   list-style-type: none;
+  margin: 0 1em;
 }
 
 .account a {
@@ -63,7 +60,7 @@ a {
 }
 
 .search-bar {
-  width: 25em;
+  width: 10vw;
   border: 3px solid #00B4CC;
   border-right: none;
   height: 2.6em;
@@ -321,10 +318,6 @@ a {
   color: black;
   font-size: 3em;
   cursor: pointer;
-}
-
-.random-anime h1:hover {
-  color: rgba(0, 0, 0, 0.1);
 }
 
 .random-anime p {

@@ -30,12 +30,9 @@
           flex-direction: row;
 }
 
-.nav-list a {
-  margin: 0 1em;
-}
-
-.nav-list a li {
+.nav-list li {
   list-style-type: none;
+  margin: 0 1em;
 }
 
 .account a {
@@ -47,7 +44,7 @@
 }
 
 .search-bar {
-  width: 25em;
+  width: 10vw;
   border: 3px solid #00B4CC;
   border-right: none;
   height: 2.6em;
