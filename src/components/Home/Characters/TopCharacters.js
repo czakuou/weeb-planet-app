@@ -42,36 +42,18 @@ function TopCharacters() {
             )
         }
         else {
-            getData()
             return (
                 <h1>Waiting for server response</h1>
             )
         }
     }
     
-    //handle user input
-    const [characterNumber, setCharacterNumber] = useState('')
-    const [showChar, setShowChar] = useState(false)
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        setShowChar(true)
-    }
-    //hide boxes while user is typing
-    const change = e => {
-        setShowChar(false)
-        setCharacterNumber(e.target.value)
-    }
     return (
         <section className='topCharacters-section'>
-            <h1 className='topCharacters-section__title'>Top Characters</h1>
-            <form className='topCharacters-form' onSubmit={handleSubmit}>
-                <label>How many characters should I show?(1-50)</label>
-                <input type='number' max='50' required value={characterNumber} onChange={change}></input>
-                <input type='submit' value='Show Characters' />
-            </form>
+            <h1 className='topCharacters-section__title'>Top 5 Characters</h1>
             <div className='characters-boxes'>
-                {showChar ? topCharactersBox(characterNumber) : null}
+                {topCharactersBox(5)}
             </div>
         </section>
     )
