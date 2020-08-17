@@ -33,7 +33,7 @@ function TopCharacters() {
                     { charactersArr.map( (element, i) => {
                         return(
                         <div key={i}>
-                            <img  src={element.image_url} alt='img' />
+                            <a href={element.url} target='_blank'><img  src={element.image_url} alt='img' /></a>
                             <h1>{element.title}</h1>
                             <p>Rank: {element.rank}</p>
                         </div>)
