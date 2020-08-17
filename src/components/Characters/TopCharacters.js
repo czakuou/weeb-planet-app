@@ -32,8 +32,8 @@ function TopCharacters() {
                 <div>
                     { charactersArr.map( (element, i) => {
                         return(
-                        <div key={i}>
-                            <a href={element.url} target='_blank'><img  src={element.image_url} alt='img' /></a>
+                        <div className='topCharacter-box' key={i}>
+                            <a className='topCharacter-box__img' href={element.url} target='_blank'><img className='topCharacter-box__img'  src={element.image_url} alt='img' /></a>
                             <h1>{element.title}</h1>
                             <p>Rank: {element.rank}</p>
                         </div>)
@@ -63,15 +63,17 @@ function TopCharacters() {
         setCharacterNumber(e.target.value)
     }
     return (
-        <div>
-            <h1>Top Characters</h1>
-            <form onSubmit={handleSubmit}>
+        <section className='topCharacters-section'>
+            <h1 className='topCharacters-section__title'>Top Characters</h1>
+            <form className='topCharacters-form' onSubmit={handleSubmit}>
                 <label>How many characters should I show?(1-50)</label>
                 <input type='number' max='50' required value={characterNumber} onChange={change}></input>
                 <input type='submit' value='Show Characters' />
             </form>
-            {showChar ? topCharactersBox(characterNumber) : null}
-        </div>
+            <div className='characters-boxes'>
+                {showChar ? topCharactersBox(characterNumber) : null}
+            </div>
+        </section>
     )
 }
 
