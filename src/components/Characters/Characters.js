@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 function Characters() {
 
     const [topCharacters, setTopCharacter] = useState()
-    const [characternumber, setCharacterNumber] = useState()
 
 
     //fetch Top characters Data
@@ -44,20 +43,35 @@ function Characters() {
             )
         }
         else {
+            getData()
             return (
                 <h1>Waiting</h1>
             )
         }
     }
+    
+    //handle user input
+    const [characterNumber, setCharacterNumber] = useState('')
+    const [showChar, setShowChar] = useState(false)
 
-    console.log(topCharacters)
+    const handleSubmit = e => {
+        e.preventDefault()
+        setShowChar(true)
+    }
+    //hide boxes while user is typing
+    const change = e => {
+        setShowChar(false)
+        setCharacterNumber(e.target.value)
+    }
     return (
         <div>
             <h1>Top Characters</h1>
-            <p>How many characters should I show?</p>
-            
-            <input type='number'id='characters' name='characters' placeholder='Characters number'></input>
-            {topCharactersBox(5)}
+            <form onSubmit={handleSubmit}>
+                <label>How many characters should I show?(1-50)</label>
+                <input type='number' max='50' required value={characterNumber} onChange={change}></input>
+                <input type='submit' value='Show Characters' />
+            </form>
+            {showChar ? topCharactersBox(characterNumber) : null}
         </div>
     )
 }

@@ -7,8 +7,8 @@ function Header() {
             <h1 className='web-title'>Weeb-Planet</h1>
             <ul className='nav-list'>
                 <a href="" value='anime'><li>Anime</li></a>
-                <a href="" value='manga'><li>Manga</li></a>
-                <Link to='/characters'>
+                <a href="https://weeb-planet.netlify.app/characters" value='manga'><li>Manga</li></a>
+                <Link to="/characters">
                     <li>Characters</li>
                 </Link>
             </ul>
