@@ -7,7 +7,7 @@ import settings from './sliderSettings'
 function TopairingAnime() {
     const [airingAnimeData, setairingAnimeData] = useState() //fetched data
     
-     //fetch airing anime airing data
+     //fetch season anime data
      const getData = async () => {
         try{
             const response = await fetch('https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/season')

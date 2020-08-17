@@ -25,8 +25,7 @@ function MostPopularAnime() {
         getData()
     }, [])
 
-    console.log(mostPopularAnimeData)
-
+    //anime box
     function animeDataBox(id) {
 
         if(mostPopularAnimeData !== undefined){
