@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return(
@@ -7,7 +8,9 @@ function Header() {
             <ul className='nav-list'>
                 <a href="" value='anime'><li>Anime</li></a>
                 <a href="" value='manga'><li>Manga</li></a>
-                <a href="" value='char'><li>Characters</li></a>
+                <Link to='/characters'>
+                    <li>Characters</li>
+                </Link>
             </ul>
             <form className='search-form'>
                 <label className='search-label'>

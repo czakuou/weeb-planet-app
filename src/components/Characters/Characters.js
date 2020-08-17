@@ -55,6 +55,7 @@ function Characters() {
         <div>
             <h1>Top Characters</h1>
             <p>How many characters should I show?</p>
+            
             <input type='number'id='characters' name='characters' placeholder='Characters number'></input>
             {topCharactersBox(5)}
         </div>
