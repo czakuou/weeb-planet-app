@@ -5,6 +5,7 @@ import Home from './Home.js'
 import Characters from './components/Characters/Characters'
 import './components/styles/styles.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import AnimeSection from './components/currentylAiring/AnimeSection'
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
     <Router>
       <Header />
       <HeadImage />
-      <Switch>      
-        <Route path="/anime" exact component={Home} />
+      <Switch>
+        <Route path="/" exact component={Home} />      
+        <Route path="/anime" exact component={AnimeSection} />
         <Route path='/characters' exact component={Characters} />
       </Switch>
     </Router>

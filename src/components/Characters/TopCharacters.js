@@ -44,7 +44,7 @@ function TopCharacters() {
         else {
             getData()
             return (
-                <h1>Waiting</h1>
+                <h1>Waiting for server response</h1>
             )
         }
     }
