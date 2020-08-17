@@ -10,7 +10,7 @@ function TopairingAnime() {
      //fetch airing anime airing data
      const getData = async () => {
         try{
-            const response = await fetch('https://private-anon-d58a107d8f-jikan.apiary-proxy.com/v3/top/anime/1/airing')
+            const response = await fetch('https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/season')
             const data = await response.json()
                 .then(data => {
                     setairingAnimeData(Object.assign({}, data))
@@ -28,13 +28,13 @@ function TopairingAnime() {
     function animeDataBox(id) {
 
         if(airingAnimeData !== undefined){
-            const img = `url("${airingAnimeData.top[id].image_url}")`
+            const img = `url("${airingAnimeData.anime[id].image_url}")`
             return(
-                <div className='top-airing-section__div'>
-                    <a style={{ backgroundImage: img }} className='top-airing-section__box' href={airingAnimeData.top[id].url} target="_blank">
-                        <p>{airingAnimeData.top[id].title}</p>
-                    </a>
-                 </div>
+                    <div className='top-airing-section__div'>
+                        <a style={{ backgroundImage: img }} className='top-airing-section__box' href={airingAnimeData.anime[id].url} target="_blank">
+                            <p>{airingAnimeData.anime[id].title}</p>
+                        </a>
+                    </div>
             )}
         else{
             return(
@@ -46,7 +46,7 @@ function TopairingAnime() {
     
     return (
         <>
-        <h1 className='airing-h'>Currently Airing</h1>
+        <h1 className='airing-h'>Current Season</h1>
             <Slider className='top-airing-section'  {...settings}>
                 {animeDataBox(0)}
                 {animeDataBox(1)}
