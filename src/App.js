@@ -1,17 +1,20 @@
 import React from 'react';
 import Header from './components/Header/Header'
 import HeadImage from './components/Header/HeadImage'
-import TopSeasonAnime from './components/currentylAiring/TopSeasonAnime'
+import Home from './Home.js'
 import './components/styles/styles.css'
-import RandomAnime from './components/randomAnime/randomAnime'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
     <>
+    <Router>
       <Header />
       <HeadImage />
-      <TopSeasonAnime />
-      <RandomAnime />
+      <Switch>      
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Router>
     </>
   )
 }
