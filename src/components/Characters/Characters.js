@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 function Characters() {
 
     const [topCharacters, setTopCharacter] = useState()
+    const [characternumber, setCharacterNumber] = useState()
+
 
     //fetch Top characters Data
     const getData = async () => {
@@ -29,14 +31,21 @@ function Characters() {
                 charactersArr.push(topCharacters[i])
             }
             return (
-                <>
-                    { charactersArr.map( (element, i) => <h1 key={i}>{element.title}</h1> ) }
-                </>
+                <div>
+                    { charactersArr.map( (element, i) => {
+                        return(
+                        <div key={i}>
+                            <img  src={element.image_url} alt='img' />
+                            <h1>{element.title}</h1>
+                            <p>Rank: {element.rank}</p>
+                        </div>)
+                    } ) } 
+                </div>
             )
         }
         else {
             return (
-                <h1>Loading</h1>
+                <h1>Waiting</h1>
             )
         }
     }
@@ -44,8 +53,10 @@ function Characters() {
     console.log(topCharacters)
     return (
         <div>
-            <h1>dupa</h1>
-            {topCharactersBox(3)}
+            <h1>Top Characters</h1>
+            <p>How many characters should I show?</p>
+            <input type='number'id='characters' name='characters' placeholder='Characters number'></input>
+            {topCharactersBox(5)}
         </div>
     )
 }
