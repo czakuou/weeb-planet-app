@@ -6,7 +6,20 @@ function SearchBar () {
     const manga = 'manga'
 
 
-    
+    const getData = async () => {
+        try{
+            const response = await fetch(`https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/search/anime?q${searchValue}`)
+            const data = response.json()
+                .then(data => {
+                    console.log(data)
+                })}catch (error){
+                    console.log(error)
+                }
+    }
+
+    useEffect(() =>{
+        getData()
+    }, [searchValue])
 
 
     return (
