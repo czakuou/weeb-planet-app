@@ -12,7 +12,6 @@ function SearchBar () {
     const [searchData, setSearchData] = useState()
     const [searchValue, setSearchValue] = useState('')
     const [category, setCategory] = useState(optionSearch[0].value)
-    const [submit, setSubmit] = useState(false)
 
     //get search data
     const getData = async () => {
@@ -28,20 +27,44 @@ function SearchBar () {
                 }
     }
 
-    // useEffect(() =>{
-    //     getData()
-    // }, [submit])
 
     //handle search button
     function handleClick(e){
         e.preventDefault()
-        // setSubmit(!submit)
         console.log(searchValue)
         console.log(category.value)
         getData()
-        console.log(searchData)
     }
+
+
+    function searchBox() {
+        if(searchData !== undefined){
+            const dataArr = []
+            for (let i=0; i<searchData.length;i++){
+                dataArr.push(searchData[i])
+            }
+            return (
+                <div>
+                    { dataArr.map((element, i) => {
+                        return (
+                            <div className='topCharacter-box' key={i}>
+                            <a className='topCharacter-box__img' href={element.url} target='_blank'><img className='topCharacter-box__img'  src={element.image_url} alt='img' /></a>
+                            <h1>{element.title}</h1>
+                        </div>
+                        )
+                    } ) }
+                </div>
+            )
+        }
+        else {
+            return(
+                <h1>Search results</h1>
+            )
+        }
+    }
+
     return (
+        <>
         <form>
             <label>
                 <Select 
@@ -54,6 +77,10 @@ function SearchBar () {
             </label>
             <button  onClick={handleClick}>Search</button>
         </form>
+        <div>
+            {searchBox()}
+        </div>
+        </>
     )
 }
 
