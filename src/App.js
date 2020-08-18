@@ -13,8 +13,7 @@ function App() {
       <HeadImage />
       <Switch>
         <Route path="/" exact component={Home} />      
-        <Route path="/anime" exact />
-        <Route path='/characters' exact />
+        <Route path='/about' exact />
       </Switch>
     </Router>
     </>

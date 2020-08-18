@@ -8,17 +8,11 @@ function Header() {
                 <h1 className='web-title'>Weeb-Planet</h1>
             </Link>
             <ul className='nav-list'>
-                <Link to='/anime'>
-                    <li>Anime</li>
+                <Link to='/'>
+                    <li>Home</li>
                 </Link>
                 <Link to='/manga'>
-                    <li>Manga</li>
-                </Link>
-                <Link to="/characters">
-                    <li>Characters</li>
-                </Link>
-                <Link to='/search'>
-                    <li>Search</li>
+                    <li>About</li>
                 </Link>
             </ul>
         </header>

@@ -27,7 +27,7 @@ function MostPopularManga() {
 
     //manga box
     function mangaDataBox(id) {
-
+        
         if(mostPopularMangaData !== undefined){
             const img = `url("${mostPopularMangaData[id].image_url}")`
             return(

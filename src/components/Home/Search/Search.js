@@ -36,7 +36,7 @@ function SearchBar () {
         getData()
     }
 
-
+    //generate results boxes
     function searchBox() {
         if(searchData !== undefined){
             const dataArr = []
