@@ -1,37 +1,58 @@
 import React, { useEffect, useState } from 'react'
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
+
+const optionSearch = [
+    {value: 'anime', label: 'anime'},
+    {value: 'manga', label: 'manga'},
+    {value: 'character', label: 'character'}
+]
 
 function SearchBar () {
+    const [searchData, setSearchData] = useState()
     const [searchValue, setSearchValue] = useState('')
-    const anime = 'anime'
-    const manga = 'manga'
+    const [category, setCategory] = useState(optionSearch[0].value)
+    const [submit, setSubmit] = useState(false)
 
-
+    //get search data
     const getData = async () => {
+        let link = `https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/search/${category.value}?q=${searchValue}&page=1`
+        console.log(link)
         try{
-            const response = await fetch(`https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/search/anime?q${searchValue}`)
+            const response = await fetch(link)
             const data = response.json()
                 .then(data => {
-                    console.log(data)
+                    setSearchData(data.results)
                 })}catch (error){
                     console.log(error)
                 }
     }
 
-    useEffect(() =>{
+    // useEffect(() =>{
+    //     getData()
+    // }, [submit])
+
+    //handle search button
+    function handleClick(e){
+        e.preventDefault()
+        // setSubmit(!submit)
+        console.log(searchValue)
+        console.log(category.value)
         getData()
-    }, [searchValue])
-
-
+        console.log(searchData)
+    }
     return (
         <form>
             <label>
-                <select>
-                    <option value={anime}>Anime</option>
-                    <option>Characters</option>
-                    <option value={manga}>Manga</option>
-                </select>
+                <Select 
+                    options={optionSearch}
+                    className='select'
+                    placeholder='anime'
+                    onChange={setCategory}
+                />
                 <input type="text" value={searchValue} placeholder='Search' onChange={e => setSearchValue(e.target.value)}></input>
             </label>
+            <button  onClick={handleClick}>Search</button>
         </form>
     )
 }
