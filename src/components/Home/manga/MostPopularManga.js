@@ -8,7 +8,7 @@ function MostPopularManga() {
     const [mostPopularMangaData, setmostPopularMangaData] = useState()
 
 
-    //fetch Top  Data
+    //fetch Top manga Data
     const getData = async () => {
         try {
             const response = await fetch('https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/top/manga')
@@ -25,7 +25,7 @@ function MostPopularManga() {
         getData()
     }, [])
 
-    //anime box
+    //manga box
     function mangaDataBox(id) {
 
         if(mostPopularMangaData !== undefined){
@@ -46,7 +46,7 @@ function MostPopularManga() {
 
     return (
         <>
-        <h1 className='airing-h'>Most Popular Anime</h1>
+        <h1 className='airing-h'>Most Popular Manga</h1>
         <Slider className='top-airing-section'  {...settings}>
                 {mangaDataBox(0)}
                 {mangaDataBox(1)}
