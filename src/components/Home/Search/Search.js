@@ -11,7 +11,7 @@ const optionSearch = [
 function SearchBar () {
     const [searchData, setSearchData] = useState()
     const [searchValue, setSearchValue] = useState('')
-    const [category, setCategory] = useState(optionSearch[0].value)
+    const [category, setCategory] = useState(optionSearch[0])
 
     //get search data
     const getData = async () => {
