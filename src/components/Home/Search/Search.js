@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import ShowMore from 'react-show-more'
 
+
+
 const optionSearch = [
     {value: 'anime', label: 'anime'},
     {value: 'manga', label: 'manga'},
     {value: 'character', label: 'character'}
 ]
-let numberr = 6
+let numberr = 14
 
 function SearchBar () {
     const [searchData, setSearchData] = useState()
@@ -18,7 +20,6 @@ function SearchBar () {
     //get search data
     const getData = async () => {
         let link = `https://private-anon-a94c3ea598-jikan.apiary-proxy.com/v3/search/${category.value}?q=${searchValue}&page=1`
-        console.log(link)
         try{
             const response = await fetch(link)
             const data = response.json()
@@ -33,8 +34,7 @@ function SearchBar () {
     //handle search button
     function handleClick(e){
         e.preventDefault()
-        console.log(searchValue)
-        console.log(category.value)
+        setNumber(14)
         getData()
     }
 
@@ -46,38 +46,39 @@ function SearchBar () {
                 dataArr.push(searchData[i])
             }
             return (
-                <>
+                <div className='boxes'>
                     { dataArr.map((element, i) => {
                         return (
-                        <div className='topCharacter-box' key={i}>
-                            <a className='topCharacter-box__img' href={element.url} target='_blank'><img className='topCharacter-box__img'  src={element.image_url} alt='img' /></a>
-                            <h1>{element.title}</h1>
+                        <div className='seachSeries-box' key={i}>
+                            <a className='search-img' href={element.url} target='_blank'><img className='search-img'  src={element.image_url} alt='img' /></a>
+                            <h1 className='search-box__h1'>{element.title}</h1>
                         </div>
                         )
                     } ) }
-                </>
+                </div>
             )
         }
         else {
             return(
-                <h1>Search results</h1>
+                <h1 className='search-box__h1'>Search results</h1>
             )
         }
     }
   
+    //show more search results
     useEffect(()=>{
         searchBox(number)
     },[number])
 
     function handleClickShowMore() {
         
-        setNumber(number+3)
-        console.log(number)
+        setNumber(number+7)
     }
 
     return (
-        <>
+        <div className='search-section'>
         <form>
+            <div>
             <label>
                 <Select 
                     options={optionSearch}
@@ -88,12 +89,13 @@ function SearchBar () {
                 <input type="text" value={searchValue} placeholder='Search' onChange={e => setSearchValue(e.target.value)}></input>
             </label>
             <button  onClick={handleClick}>Search</button>
+            </div>
         </form>
-        <div>
+        <div className='search-box'>
             {searchBox(number)}
+        </div>
             <button onClick={handleClickShowMore} type="button">Show More</button>
         </div>
-        </>
     )
 }
 
