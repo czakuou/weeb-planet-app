@@ -9,13 +9,15 @@ const optionSearch = [
     {value: 'manga', label: 'manga'},
     {value: 'character', label: 'character'}
 ]
-let numberr = 14
+let numberr = 8
+let itemPage =0
 
 function SearchBar () {
     const [searchData, setSearchData] = useState()
     const [searchValue, setSearchValue] = useState('')
     const [category, setCategory] = useState(optionSearch[0])
     const [number, setNumber] = useState(numberr)
+    const [searchPage, setSearchPage] = useState(itemPage)
 
     //get search data
     const getData = async () => {
@@ -34,7 +36,7 @@ function SearchBar () {
     //handle search button
     function handleClick(e){
         e.preventDefault()
-        setNumber(14)
+        setNumber(8)
         getData()
     }
 
@@ -42,7 +44,7 @@ function SearchBar () {
     const searchBox = (number) => {
         if(searchData !== undefined){
             const dataArr = []
-            for (let i=0; i<searchData.length && i<number;i++){
+            for (let i=searchPage; i<searchData.length && i<number;i++){
                 dataArr.push(searchData[i])
             }
             return (
@@ -65,14 +67,18 @@ function SearchBar () {
         }
     }
   
-    //show more search results
+    //prev and next search results buttons
     useEffect(()=>{
         searchBox(number)
     },[number])
 
-    function handleClickShowMore() {
-        
-        setNumber(number+7)
+    function handleClickNext() {
+        setSearchPage(searchPage+8)
+        setNumber(number+8)
+    }
+    function handleClickPrev() {
+        setSearchPage(searchPage-8)
+        setNumber(number-8)
     }
 
     return (
@@ -92,9 +98,12 @@ function SearchBar () {
             </div>
         </form>
         <div className='search-box'>
+            <button onClick={handleClickPrev} disabled={searchPage <= 0} type="button" >Prev</button>
             {searchBox(number)}
+            <button onClick={handleClickNext} type="button" >Next</button>
         </div>
-            <button onClick={handleClickShowMore} type="button" className='button-more'>Show More</button>
+            <div className='button-meor'>
+            </div>
         </div>
     )
 }

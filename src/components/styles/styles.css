@@ -29,8 +29,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 200px;
-  padding-bottom: 500px;
 }
 
 .search-box {
@@ -122,10 +120,6 @@ a {
             column-gap: 100px;
     row-gap: 2%;
   }
-}
-
-.button-more {
-  display: block;
 }
 
 .header {
