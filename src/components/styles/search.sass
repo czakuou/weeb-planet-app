@@ -1,8 +1,11 @@
 .search-section
+    height: auto
     display: flex
     justify-content: center
     align-items: center
     flex-direction: column
+    margin-bottom: 200px
+    padding-bottom: 500px
 
 .search-box
     display: inline-flex
@@ -16,18 +19,43 @@
 
 
 .seachSeries-box
-    height: 20rem
-    width: 10rem
+    height: 30rem
+    width: 15rem
     display: inline-flex
     flex-direction: column
     justify-content: center
-    margin: 7px
+    margin: 1%
     box-shadow: 10px 5px 25px black
+    &:hover
+        opacity: 0.5
+    @media screen and ( max-width: 700px  ) 
+        height: 20rem
+        width: 8rem
+        
+        
     
         
 .search-box__h1
-    font-size: 16px 
+    font-size: 14px 
 
 .search-bar
     display: flex
 
+.boxes
+    display: grid
+    grid-template-columns: 5% 5% 5% 5%;
+    grid-template-rows: auto; 
+    column-gap: 200px;
+    justify-content: center
+    row-gap: 1%;
+    margin: 0
+    padding: 0
+    @media screen and ( max-width: 700px  ) 
+        display: grid
+        grid-template-columns: 50px 50px;
+        grid-template-rows: auto; 
+        column-gap: 100px;
+        row-gap: 2%;
+        
+.button-more
+    display: block

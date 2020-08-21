@@ -94,7 +94,7 @@ function SearchBar () {
         <div className='search-box'>
             {searchBox(number)}
         </div>
-            <button onClick={handleClickShowMore} type="button">Show More</button>
+            <button onClick={handleClickShowMore} type="button" className='button-more'>Show More</button>
         </div>
     )
 }
