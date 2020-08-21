@@ -12,12 +12,18 @@
 }
 
 .web-title {
-  font-size: 7.5vw;
+  font-size: 50px;
   margin: 0;
 }
 
+@media screen and (max-width: 700px) {
+  .web-title {
+    font-size: 36px;
+  }
+}
+
 .nav-list {
-  font-size: 4vw;
+  font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +38,12 @@
 .nav-list li {
   list-style-type: none;
   margin: 0 1em;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-list {
+    font-size: 16px;
+  }
 }
 
 .account a {

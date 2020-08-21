@@ -1,4 +1,4 @@
-$breakpoint-tablet: 768px;
+
 
 
 .header
@@ -8,17 +8,21 @@ $breakpoint-tablet: 768px;
     align-items: center
 
 .web-title
-    font-size: 7.5vw
+    font-size: 50px
     margin: 0
+    @media screen and ( max-width: 700px  )
+        font-size: 36px
 
 .nav-list
-    font-size: 4vw
+    font-size: 24px
     display: flex
     justify-content: space-around
     flex-direction: row
     li
         list-style-type: none
         margin: 0 1em
+    @media screen and ( max-width: 700px  )
+        font-size: 16px
 
 .account
     a

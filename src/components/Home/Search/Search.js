@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
-import makeAnimated from 'react-select/animated'
+import ShowMore from 'react-show-more'
 
 const optionSearch = [
     {value: 'anime', label: 'anime'},
     {value: 'manga', label: 'manga'},
     {value: 'character', label: 'character'}
 ]
+let numberr = 6
 
 function SearchBar () {
     const [searchData, setSearchData] = useState()
     const [searchValue, setSearchValue] = useState('')
     const [category, setCategory] = useState(optionSearch[0])
+    const [number, setNumber] = useState(numberr)
 
     //get search data
     const getData = async () => {
@@ -37,23 +39,23 @@ function SearchBar () {
     }
 
     //generate results boxes
-    function searchBox() {
+    const searchBox = (number) => {
         if(searchData !== undefined){
             const dataArr = []
-            for (let i=0; i<searchData.length;i++){
+            for (let i=0; i<searchData.length && i<number;i++){
                 dataArr.push(searchData[i])
             }
             return (
-                <div>
+                <>
                     { dataArr.map((element, i) => {
                         return (
-                            <div className='topCharacter-box' key={i}>
+                        <div className='topCharacter-box' key={i}>
                             <a className='topCharacter-box__img' href={element.url} target='_blank'><img className='topCharacter-box__img'  src={element.image_url} alt='img' /></a>
                             <h1>{element.title}</h1>
                         </div>
                         )
                     } ) }
-                </div>
+                </>
             )
         }
         else {
@@ -61,6 +63,16 @@ function SearchBar () {
                 <h1>Search results</h1>
             )
         }
+    }
+  
+    useEffect(()=>{
+        searchBox(number)
+    },[number])
+
+    function handleClickShowMore() {
+        
+        setNumber(number+3)
+        console.log(number)
     }
 
     return (
@@ -78,7 +90,8 @@ function SearchBar () {
             <button  onClick={handleClick}>Search</button>
         </form>
         <div>
-            {searchBox()}
+            {searchBox(number)}
+            <button onClick={handleClickShowMore} type="button">Show More</button>
         </div>
         </>
     )
