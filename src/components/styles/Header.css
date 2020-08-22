@@ -1,5 +1,5 @@
 .header {
-  width: 100vw;
+  width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,9 +12,12 @@
 }
 
 .web-title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: 1px solid black;
   font-size: 50px;
-  padding: 2vh 2vw;
-  margin: 0;
+  margin: 5px;
 }
 
 @media screen and (max-width: 700px) {
