@@ -68,10 +68,7 @@ function SearchBar () {
     }
   
     //prev and next search results buttons
-    useEffect(()=>{
-        searchBox(number)
-    },[number])
-
+  
     function handleClickNext() {
         setSearchPage(searchPage+8)
         setNumber(number+8)
@@ -79,6 +76,11 @@ function SearchBar () {
     function handleClickPrev() {
         setSearchPage(searchPage-8)
         setNumber(number-8)
+    }
+    function disableNextBtn (){ //disable next button on last page
+        if (searchData !== undefined) {
+           return number > searchData.length
+        }
     }
 
     return (
@@ -100,7 +102,7 @@ function SearchBar () {
         <div className='search-box'>
             <button onClick={handleClickPrev} disabled={searchPage <= 0} type="button" >Prev</button>
             {searchBox(number)}
-            <button onClick={handleClickNext} type="button" >Next</button>
+            <button onClick={handleClickNext} disabled={disableNextBtn()} type="button" >Next</button>
         </div>
             <div className='button-meor'>
             </div>
