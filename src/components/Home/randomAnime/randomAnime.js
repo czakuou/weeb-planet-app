@@ -71,7 +71,7 @@ function RandomAnime() {
                     <p>Premiere: {premiered}</p>
                     <p>{rating}</p>
                     <p className='random-anime__synopsis'>{synopsis}</p>
-                    <button className="random-anime__button button" onClick={getData} type='button'>Random</button>
+                    <a className="random-anime__button button" onClick={getData} type='button'>Random</a>
                 </div>
             </>
         )}
