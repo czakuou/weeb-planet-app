@@ -14,7 +14,61 @@ a {
   text-decoration: none;
 }
 
+.search-bar__container {
+  margin-top: 10px;
+  width: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0;
+}
+
+@media screen and (max-width: 1550px) {
+  .search-bar__container {
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .search-bar__container {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .search-bar__container {
+    width: 18rem;
+  }
+}
+
+.search-bar__container input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+}
+
+.search-bar__container button {
+  width: 20%;
+  background: #76B3FA;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.search-bar__container button:hover {
+  -webkit-animation: hover 1200ms both linear 2 alternate;
+          animation: hover 1200ms both linear 2 alternate;
+}
+
 .search-section {
+  margin: 2% 0;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;

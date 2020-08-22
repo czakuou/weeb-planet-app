@@ -96,9 +96,11 @@ function SearchBar () {
                     isSearchable = {false}
                     onChange={setCategory}
                 />
-                <input type="text" value={searchValue} placeholder='Search' onChange={e => setSearchValue(e.target.value)}></input>
+                <div className='search-bar__container'>
+                    <input type="text" value={searchValue} placeholder='Search (min 3 characters)' onChange={e => setSearchValue(e.target.value)}></input>
+                    <button onClick={handleClick}>Search</button>
+                </div>
             </label>
-            <button  onClick={handleClick}>Search</button>
             </div>
             <div className='buttons'>
                 <a onClick={handleClickPrev} disabled={searchPage <= 0} className='button' type="button" >Prev</a>
