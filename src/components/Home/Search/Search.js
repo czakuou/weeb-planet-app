@@ -103,8 +103,8 @@ function SearchBar () {
             </label>
             </div>
             <div className='buttons'>
-                <a onClick={handleClickPrev} disabled={searchPage <= 0} className='button' type="button" >Prev</a>
-                <a onClick={handleClickNext} disabled={disableNextBtn()} className='button' type="button" >Next</a>
+                <button onClick={handleClickPrev} disabled={searchPage <= 0} className='button' type="button" >Prev</button>
+                <button onClick={handleClickNext} disabled={disableNextBtn()} className='button' type="button" >Next</button>
             </div>
         </form>
         <div className='search-box'>
