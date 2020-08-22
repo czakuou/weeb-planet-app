@@ -554,7 +554,6 @@ keyframes active 100% {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  border: 1px solid black;
   font-size: 50px;
   margin: 5px;
 }
