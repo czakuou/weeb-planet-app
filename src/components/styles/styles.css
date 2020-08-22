@@ -60,6 +60,7 @@ a {
   cursor: pointer;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  text-decoration: none;
 }
 
 .search-bar__container button:hover {
@@ -551,6 +552,7 @@ keyframes active 100% {
 
 .web-title {
   font-size: 50px;
+  padding: 2vh 2vw;
   margin: 0;
 }
 

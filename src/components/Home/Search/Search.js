@@ -97,7 +97,7 @@ function SearchBar () {
                     onChange={setCategory}
                 />
                 <div className='search-bar__container'>
-                    <input type="text" value={searchValue} placeholder='Search (min 3 characters)' onChange={e => setSearchValue(e.target.value)}></input>
+                    <input className='search-bar__input' type="text" value={searchValue} placeholder='Search (min 3 characters)' onChange={e => setSearchValue(e.target.value)}></input>
                     <button onClick={handleClick}>Search</button>
                 </div>
             </label>

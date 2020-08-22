@@ -44,6 +44,7 @@
   cursor: pointer;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  text-decoration: none;
 }
 
 .search-bar__container button:hover {
