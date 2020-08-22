@@ -37,6 +37,7 @@ function SearchBar () {
     function handleClick(e){
         e.preventDefault()
         setNumber(8)
+        setSearchPage(0)
         getData()
     }
 
@@ -92,6 +93,7 @@ function SearchBar () {
                     options={optionSearch}
                     className='select'
                     placeholder='anime'
+                    isSearchable = {false}
                     onChange={setCategory}
                 />
                 <input type="text" value={searchValue} placeholder='Search' onChange={e => setSearchValue(e.target.value)}></input>
